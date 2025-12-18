@@ -10,3 +10,7 @@ function loadVoices() {
     return;
   }
 }
+
+// Clear existing voice options
+const voiceSelect = document.getElementById("voice-select");
+voiceSelect.innerHTML = "";
