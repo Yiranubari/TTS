@@ -39,6 +39,14 @@ function init() {
   speakBtn.addEventListener("click", speak);
   stopBtn.addEventListener("click", stop);
 
+  speedSlider.addEventListener("input", () => {
+    document.getElementById("speed-value").textContent = speedSlider.value;
+  });
+
+  pitchSlider.addEventListener("input", () => {
+    document.getElementById("pitch-value").textContent = pitchSlider.value;
+  });
+
   updateCharCount();
   stopBtn.disabled = true;
 }
@@ -100,7 +108,7 @@ function speak() {
 
 function stop() {
   synth.cancel();
-  status.classList.remove("speaking");
+  statusElement.classList.remove("speaking");
   statusText.textContent = "Stopped";
   speakBtn.disabled = false;
   stopBtn.disabled = true;
