@@ -5,6 +5,9 @@ const pitchSlider = document.getElementById("pitch-slider");
 const statusElement = document.getElementById("status");
 const statusText = document.getElementById("status-text");
 const voiceSelect = document.getElementById("voice-select");
+const textInput = document.getElementById("text-input");
+const charCount = document.getElementById("char-count");
+
 let isStopped = false;
 
 // Web Speech API
@@ -55,8 +58,6 @@ function init() {
 document.addEventListener("DOMContentLoaded", init);
 
 // Text input and character count
-const textInput = document.getElementById("text-input");
-const charCount = document.getElementById("char-count");
 
 function updateCharCount() {
   const count = textInput.value.length;
@@ -124,6 +125,7 @@ function stop() {
   speechSynthesis.cancel();
   statusText.textContent = "Stopped";
 }
+
 // function stop() {
 //   synth.cancel();
 //   statusElement.classList.remove("speaking");
