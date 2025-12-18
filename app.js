@@ -94,12 +94,20 @@ function speak() {
     speakBtn.disabled = false;
     stopBtn.disabled = true;
   };
+
   utterance.onerror = (event) => {
     console.error("Speech synthesis error:", event);
-    statusText.textContent = "Error occurred";
-    speakBtn.disabled = false;
-    stopBtn.disabled = true;
+    if (!isStopped) {
+      statusText.textContent = "Error occurred";
+    }
+    isStopped = false; // Reset flag
   };
+  //   utterance.onerror = (event) => {
+  //     console.error("Speech synthesis error:", event);
+  //     statusText.textContent = "Error occurred";
+  //     speakBtn.disabled = false;
+  //     stopBtn.disabled = true;
+  //   };
   if (synth.speaking) {
     synth.cancel();
   }
