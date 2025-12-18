@@ -93,3 +93,11 @@ function speak() {
 
   synth.speak(utterance);
 }
+
+function stop() {
+  synth.cancel();
+  status.classList.remove("speaking");
+  statusText.textContent = "Stopped";
+  speakBtn.disabled = false;
+  stopBtn.disabled = true;
+}
