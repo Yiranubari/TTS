@@ -8,7 +8,7 @@ const voiceSelect = document.getElementById("voice-select");
 const textInput = document.getElementById("text-input");
 const charCount = document.getElementById("char-count");
 
-let isStopped = false;
+let isManuallyStopped = false;
 
 // Web Speech API
 const synth = window.speechSynthesis;
