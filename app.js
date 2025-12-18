@@ -128,9 +128,11 @@ function speak() {
 }
 
 function stop() {
-  isStopped = true;
   speechSynthesis.cancel();
+  statusElement.classList.remove("speaking");
   statusText.textContent = "Stopped";
+  speakBtn.disabled = false;
+  stopBtn.disabled = true;
 }
 
 // function stop() {
