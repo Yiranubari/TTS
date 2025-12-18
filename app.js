@@ -73,6 +73,13 @@ function speak() {
     alert("Please enter some text to speak");
     return;
   }
+
+  // RESET UI FOR NEW SPEECH
+  statusElement.classList.add("speaking");
+  statusText.textContent = "Speaking...";
+  speakBtn.disabled = true;
+  stopBtn.disabled = false;
+
   const utterance = new SpeechSynthesisUtterance(text);
 
   const selectedVoiceIndex = voiceSelect.value;
