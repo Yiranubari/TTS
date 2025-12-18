@@ -34,9 +34,13 @@ function loadVoices() {
 function init() {
   loadVoices();
   synth.addEventListener("voiceschanged", loadVoices);
-
   textInput.addEventListener("input", updateCharCount);
+
+  speakBtn.addEventListener("click", speak);
+  stopBtn.addEventListener("click", stop);
+
   updateCharCount();
+  stopBtn.disabled = true;
 }
 
 document.addEventListener("DOMContentLoaded", init);
