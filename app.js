@@ -39,3 +39,5 @@ function updateCharCount() {
   const count = textInput.value.length;
   charCount.textContent = count;
 }
+
+textInput.addEventListener("input", updateCharCount);
