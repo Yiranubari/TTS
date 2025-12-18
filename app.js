@@ -2,7 +2,7 @@ const speakBtn = document.getElementById("speak-btn");
 const stopBtn = document.getElementById("stop-btn");
 const speedSlider = document.getElementById("speed-slider");
 const pitchSlider = document.getElementById("pitch-slider");
-const status = document.getElementById("status");
+const statusElement = document.getElementById("status");
 const statusText = document.getElementById("status-text");
 
 // Web Speech API
@@ -74,13 +74,13 @@ function speak() {
   utterance.volume = 1.0;
 
   utterance.onstart = () => {
-    status.classList.add("speaking");
+    statusElement.classList.add("speaking");
     statusText.textContent = "Speaking...";
     speakBtn.disabled = true;
     stopBtn.disabled = false;
   };
   utterance.onend = () => {
-    status.classList.remove("speaking");
+    statusElement.classList.remove("speaking");
     statusText.textContent = "Ready";
     speakBtn.disabled = false;
     stopBtn.disabled = true;
