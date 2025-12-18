@@ -68,4 +68,11 @@ function speak() {
   utterance.rate = parseFloat(speedSlider.value);
   utterance.pitch = parseFloat(pitchSlider.value);
   utterance.volume = 1.0;
+
+  utterance.onstart = () => {
+    status.classList.add("speaking");
+    statusText.textContent = "Speaking...";
+    speakBtn.disabled = true;
+    stopBtn.disabled = false;
+  };
 }
