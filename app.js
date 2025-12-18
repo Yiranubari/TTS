@@ -75,4 +75,10 @@ function speak() {
     speakBtn.disabled = true;
     stopBtn.disabled = false;
   };
+  utterance.onend = () => {
+    status.classList.remove("speaking");
+    statusText.textContent = "Ready";
+    speakBtn.disabled = false;
+    stopBtn.disabled = true;
+  };
 }
