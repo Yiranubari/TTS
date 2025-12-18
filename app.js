@@ -27,6 +27,9 @@ function loadVoices() {
 function init() {
   loadVoices();
   synth.addEventListener("voiceschanged", loadVoices);
+
+  textInput.addEventListener("input", updateCharCount);
+  updateCharCount();
 }
 
 document.addEventListener("DOMContentLoaded", init);
