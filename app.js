@@ -30,3 +30,12 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+// Text input and character count
+const textInput = document.getElementById("text-input");
+const charCount = document.getElementById("char-count");
+
+function updateCharCount() {
+  const count = textInput.value.length;
+  charCount.textContent = count;
+}
