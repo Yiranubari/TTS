@@ -9,8 +9,8 @@ function loadVoices() {
   if (voices.length === 0) {
     return;
   }
-}
 
-// Clear existing voice options
-const voiceSelect = document.getElementById("voice-select");
-voiceSelect.innerHTML = "";
+  // Clear existing voice options
+  const voiceSelect = document.getElementById("voice-select");
+  voiceSelect.innerHTML = "";
+}
