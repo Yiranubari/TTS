@@ -128,7 +128,9 @@ function speak() {
 }
 
 function stop() {
+  isManuallyStopped = true;
   speechSynthesis.cancel();
+
   statusElement.classList.remove("speaking");
   statusText.textContent = "Stopped";
   speakBtn.disabled = false;
