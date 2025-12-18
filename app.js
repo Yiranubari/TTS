@@ -1,3 +1,10 @@
+const speakBtn = document.getElementById("speak-btn");
+const stopBtn = document.getElementById("stop-btn");
+const speedSlider = document.getElementById("speed-slider");
+const pitchSlider = document.getElementById("pitch-slider");
+const status = document.getElementById("status");
+const statusText = document.getElementById("status-text");
+
 // Web Speech API
 const synth = window.speechSynthesis;
 let voices = [];
