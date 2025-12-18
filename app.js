@@ -21,4 +21,5 @@ function loadVoices() {
     option.textContent = `${voice.name} (${voice.lang})`;
     voiceSelect.appendChild(option);
   });
+  console.log(`Loaded ${voices.length} voices`);
 }
