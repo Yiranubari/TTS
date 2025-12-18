@@ -65,4 +65,7 @@ function speak() {
   if (selectedVoiceIndex !== "") {
     utterance.voice = voices[selectedVoiceIndex];
   }
+  utterance.rate = parseFloat(speedSlider.value);
+  utterance.pitch = parseFloat(pitchSlider.value);
+  utterance.volume = 1.0;
 }
