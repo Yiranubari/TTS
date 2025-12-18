@@ -91,10 +91,13 @@ function speak() {
   utterance.volume = 1.0;
 
   utterance.onstart = () => {
+    // statusElement.classList.add("speaking");
+    // statusText.textContent = "Speaking...";
+    // speakBtn.disabled = true;
+    // stopBtn.disabled = false;
+    isManuallyStopped = false;
     statusElement.classList.add("speaking");
     statusText.textContent = "Speaking...";
-    speakBtn.disabled = true;
-    stopBtn.disabled = false;
   };
   utterance.onend = () => {
     isStopped = false;
@@ -108,11 +111,15 @@ function speak() {
   //   };
 
   utterance.onerror = (event) => {
-    console.error("Speech synthesis error:", event);
-    if (!isStopped) {
-      statusText.textContent = "Error occurred";
+    if (isManuallyStopped) {
+      // Ignore error caused by cancel()
+      isManuallyStopped = false;
+      return;
     }
-    isStopped = false; // Reset flag
+
+    statusText.textContent = "Error occurred";
+    speakBtn.disabled = false;
+    stopBtn.disabled = true;
   };
   //   utterance.onerror = (event) => {
   //     console.error("Speech synthesis error:", event);
