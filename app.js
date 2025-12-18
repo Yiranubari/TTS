@@ -60,4 +60,9 @@ function speak() {
     return;
   }
   const utterance = new SpeechSynthesisUtterance(text);
+
+  const selectedVoiceIndex = voiceSelect.value;
+  if (selectedVoiceIndex !== "") {
+    utterance.voice = voices[selectedVoiceIndex];
+  }
 }
