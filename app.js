@@ -4,6 +4,7 @@ const speedSlider = document.getElementById("speed-slider");
 const pitchSlider = document.getElementById("pitch-slider");
 const statusElement = document.getElementById("status");
 const statusText = document.getElementById("status-text");
+const voiceSelect = document.getElementById("voice-select");
 
 // Web Speech API
 const synth = window.speechSynthesis;
@@ -18,7 +19,6 @@ function loadVoices() {
   }
 
   // Clear existing voice options
-  const voiceSelect = document.getElementById("voice-select");
   voiceSelect.innerHTML = "";
 
   // Populate voice options
