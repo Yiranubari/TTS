@@ -23,3 +23,10 @@ function loadVoices() {
   });
   console.log(`Loaded ${voices.length} voices`);
 }
+// Initialize
+function init() {
+  loadVoices();
+  synth.addEventListener("voiceschanged", loadVoices);
+}
+
+document.addEventListener("DOMContentLoaded", init);
