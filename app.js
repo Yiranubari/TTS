@@ -5,6 +5,7 @@ const pitchSlider = document.getElementById("pitch-slider");
 const statusElement = document.getElementById("status");
 const statusText = document.getElementById("status-text");
 const voiceSelect = document.getElementById("voice-select");
+let isStopped = false;
 
 // Web Speech API
 const synth = window.speechSynthesis;
@@ -107,9 +108,14 @@ function speak() {
 }
 
 function stop() {
-  synth.cancel();
-  statusElement.classList.remove("speaking");
+  isStopped = true;
+  speechSynthesis.cancel();
   statusText.textContent = "Stopped";
-  speakBtn.disabled = false;
-  stopBtn.disabled = true;
 }
+// function stop() {
+//   synth.cancel();
+//   statusElement.classList.remove("speaking");
+//   statusText.textContent = "Stopped";
+//   speakBtn.disabled = false;
+//   stopBtn.disabled = true;
+// }
