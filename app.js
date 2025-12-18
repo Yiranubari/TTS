@@ -51,3 +51,12 @@ function updateCharCount() {
 }
 
 textInput.addEventListener("input", updateCharCount);
+
+function speak() {
+  const text = textInput.value.trim();
+
+  if (!text) {
+    alert("Please enter some text to speak");
+    return;
+  }
+}
