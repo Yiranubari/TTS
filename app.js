@@ -87,4 +87,9 @@ function speak() {
     speakBtn.disabled = false;
     stopBtn.disabled = true;
   };
+  if (synth.speaking) {
+    synth.cancel();
+  }
+
+  synth.speak(utterance);
 }
