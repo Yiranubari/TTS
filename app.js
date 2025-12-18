@@ -89,11 +89,15 @@ function speak() {
     stopBtn.disabled = false;
   };
   utterance.onend = () => {
-    statusElement.classList.remove("speaking");
+    isStopped = false;
     statusText.textContent = "Ready";
-    speakBtn.disabled = false;
-    stopBtn.disabled = true;
   };
+  //   utterance.onend = () => {
+  //     statusElement.classList.remove("speaking");
+  //     statusText.textContent = "Ready";
+  //     speakBtn.disabled = false;
+  //     stopBtn.disabled = true;
+  //   };
 
   utterance.onerror = (event) => {
     console.error("Speech synthesis error:", event);
