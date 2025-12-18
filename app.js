@@ -13,4 +13,12 @@ function loadVoices() {
   // Clear existing voice options
   const voiceSelect = document.getElementById("voice-select");
   voiceSelect.innerHTML = "";
+
+  // Populate voice options
+  voices.forEach((voice, index) => {
+    const option = document.createElement("option");
+    option.value = index;
+    option.textContent = `${voice.name} (${voice.lang})`;
+    voiceSelect.appendChild(option);
+  });
 }
