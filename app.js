@@ -59,4 +59,5 @@ function speak() {
     alert("Please enter some text to speak");
     return;
   }
+  const utterance = new SpeechSynthesisUtterance(text);
 }
